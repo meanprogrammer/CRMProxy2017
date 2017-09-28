@@ -16,6 +16,6 @@ namespace CRMService
         void DoWork();
 
         [OperationContract]
-        IEnumerable<new_employee> Employees();
+        IEnumerable<ProxyEmployee> Employees();
     }
 }

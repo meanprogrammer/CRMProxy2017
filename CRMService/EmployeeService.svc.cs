@@ -19,9 +19,9 @@ namespace CRMService
             context = new OrgContext();
         }
 
-        public IEnumerable<new_employee> Employees()
+        public IEnumerable<ProxyEmployee> Employees()
         {
-            return context.new_employeeSet.ToList();
+            return ObjectConverter.ConvertToProxyEmployee(context.new_employeeSet.ToList(), context);
         }
     }
 }
