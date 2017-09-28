@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Xrm;
 
 namespace CRMService
 {
@@ -11,15 +12,16 @@ namespace CRMService
     // NOTE: In order to launch WCF Test Client for testing this service, please select EmployeeService.svc or EmployeeService.svc.cs at the Solution Explorer and start debugging.
     public class EmployeeService : IEmployeeService
     {
-        XrmServiceContext context = null;
+        OrgContext context = null;
 
         public void DoWork()
         {
+            context = new OrgContext();
         }
 
         public IEnumerable<new_employee> Employees()
         {
-            return null;
+            return context.new_employeeSet.ToList();
         }
     }
 }
