@@ -17,5 +17,8 @@ namespace CRMService
 
         [OperationContract]
         IEnumerable<ProxyEmployee> Employees();
+
+        [OperationContract]
+        ProxyEmployee GetOneEmployee(Guid id);
     }
 }

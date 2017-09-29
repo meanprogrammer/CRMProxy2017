@@ -10,6 +10,9 @@ namespace CRMService
     public class ProxyEmployee
     {
         [DataMember]
+        public Guid ID { get; set; }
+
+        [DataMember]
         public DateTime? BirthDate { get; set; }
 
         [DataMember]

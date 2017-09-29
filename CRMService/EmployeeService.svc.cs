@@ -23,5 +23,20 @@ namespace CRMService
         {
             return ObjectConverter.ConvertToProxyEmployee(context.new_employeeSet.ToList(), context);
         }
+
+
+        public ProxyEmployee GetOneEmployee(Guid id)
+        {
+            ProxyEmployee covenant = null;
+            //using (Xrm.XrmServiceContext context = new Xrm.XrmServiceContext("Xrm"))
+            //{
+            var c = this.context.new_employeeSet.Where(i => i.Id == id).FirstOrDefault();
+            if (c != null)
+            {
+                covenant = ObjectConverter.ConvertToOneProxyEmployee(c);
+            }
+            //}
+            return covenant;
+        }
     }
 }

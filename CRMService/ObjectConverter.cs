@@ -16,9 +16,20 @@ namespace CRMService
                 ProxyEmployee p = new ProxyEmployee();
                 p.BirthDate = emp.new_birthdate;
                 p.Name = emp.new_name;
+                p.ID = emp.Id;
                 list.Add(p);
             }
             return list;
+        }
+
+        public static ProxyEmployee ConvertToOneProxyEmployee(new_employee emp)
+        {
+            ProxyEmployee p = new ProxyEmployee();
+            p.BirthDate = emp.new_birthdate;
+            p.Name = emp.new_name;
+            p.ID = emp.Id;
+
+            return p;
         }
     }
 }
