@@ -39,9 +39,5 @@ namespace CRMService
             return covenant;
         }
 
-        public void DoWork()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

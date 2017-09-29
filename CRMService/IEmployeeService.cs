@@ -13,9 +13,6 @@ namespace CRMService
     public interface IEmployeeService
     {
         [OperationContract]
-        void DoWork();
-
-        [OperationContract]
         IEnumerable<ProxyEmployee> Employees();
 
         [OperationContract]
