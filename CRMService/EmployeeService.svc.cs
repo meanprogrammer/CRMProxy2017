@@ -14,7 +14,7 @@ namespace CRMService
     {
         OrgContext context = null;
 
-        public void DoWork()
+        public EmployeeService()
         {
             context = new OrgContext();
         }
@@ -37,6 +37,11 @@ namespace CRMService
             }
             //}
             return covenant;
+        }
+
+        public void DoWork()
+        {
+            throw new NotImplementedException();
         }
     }
 }
