@@ -20,7 +20,16 @@ namespace CRMService
 
         public IEnumerable<ProxyEmployee> Employees()
         {
-            return ObjectConverter.ConvertToProxyEmployee(context.new_employeeSet.ToList(), context);
+            try
+            {
+                return ObjectConverter.ConvertToProxyEmployee(context.new_employeeSet.ToList(), context);
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+            return null;
+            
         }
 
 
